@@ -1,0 +1,102 @@
+/********** Product Page **********/
+.product {
+    border-top: 2px solid var(--h2);
+    margin: 5%;
+    display: grid; 
+    font-size: 0.9em;
+    text-align: center;
+    padding: 1em 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "pic pic"
+    "code rt"
+    "ma cl"
+    "gw pr"
+    "ord ord"
+    "atf atf"
+    "sh sh"
+    ;
+    grid-gap: 0.5em;
+}
+.image {
+    grid-area: pic;
+    border: solid 0.1em var(--h1);
+}
+.color {grid-area: cl;}
+.color button {padding: 0.5em 0.5em; border: solid 0.1em var(--h1);}
+.red {background-color: red;}
+.green {background-color: green;}
+.brown {background-color: brown; }
+.blue {background-color: blue;}
+.black {background-color: black;}
+.white {background-color: white;}
+.product h3 {
+    grid-area: code;
+    padding: 0em;
+}
+.p-material {grid-area: ma;} 
+.weight {grid-area: gw;}
+.price {grid-area: pr;}
+.price del{color: var(--h2);}
+.order {grid-area: ord;}
+.add-to-fav {grid-area: atf;}
+.share-it {grid-area: sh;}
+.p-rating {
+    grid-area: rt;
+    font-size: 0.8em;
+}
+.p-rating i {font-size:0.9em;}
+.product a {
+    padding: 0.5em;
+    background-color: var(--h1);
+    color: var(--h2);
+    border-radius: 0.5em;
+}
+
+/********* hover *********/
+.order a:hover , .add-to-fav a:hover , .share-it a:hover {
+    color: var(--h1); 
+    background-color: var(--h2);
+}
+
+/********** Similar Products **********/
+h4 {
+    text-align: center;
+    margin-top: 1em;
+    background-color: var(--bg-on-l);
+    color: var(--bg);
+}
+.similar-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0em 5% 5% 5%;
+}
+
+/********** Media **************/
+@media screen and (min-width:450px){
+    .product {
+        font-size: 1em;
+        grid-gap: 1em;
+    }
+    .p-rating i {font-size:1.2em;}
+}
+@media screen and (min-width:870px) {
+    .product {
+        display: grid;
+        text-align: center;
+        font-size: 1.2em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "pic code"
+        "pic cl"
+        "pic pr"
+        "pic ma"
+        "pic gw"
+        "pic rt"
+        "pic ord"
+        "pic atf"
+        "pic sh"
+        ;
+    }
+    .color {text-align: center;}
+}
