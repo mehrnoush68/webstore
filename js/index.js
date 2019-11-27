@@ -1,30 +1,29 @@
 /************* GLOBAL VARIABLES/DATA *************/
 
 // An Object holds multiple variables (properties) together
-// product1
-const product1 = { 
-      id:1,
-      code: '044',
-      cat:'Bracelet',
-      colors:
-      {
-          colorOne:'red',
-          colorTwo: 'green',
-          colorThree: 'white'
-      },
-      material: 'Gold',
-      rate: 4.4,
-      rateStar:{
-          full : '<i class="material-icons">star</i>',
-          half : '<i class="material-icons">star_half</i>',
-          empty: '<i class="material-icons">star_border</i>'
-      },
-      price: 60, 
-      dscnt_prc: 21, 
-      image:'product-code-044.jpg'
-    };
-// product2
-const product2 = { 
+
+const products = [
+    { 
+        id:1,
+        code: '044',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne:'red',
+            colorTwo: 'green',
+            colorThree: 'white'
+        },
+        material: 'Gold',
+        rate: 4.4,
+        rateStar:{
+            full : '<i class="material-icons">star</i>',
+            half : '<i class="material-icons">star_half</i>',
+            empty: '<i class="material-icons">star_border</i>'
+        },
+        price: 60, 
+        dscnt_prc: 21, 
+        image:'product-code-044.jpg'
+      },{ 
         id:2,
         code: '055',
         cat:'Bracelet',
@@ -44,9 +43,7 @@ const product2 = {
         price: 50, 
         dscnt_prc: 0, 
         image:'product-code-055.jpg'
-      };
-// product3
-const product3 = { 
+      },{ 
         id:3,
         code: '066',
         cat:'Bracelet',
@@ -66,9 +63,7 @@ const product3 = {
         price: 80, 
         dscnt_prc: 41, 
         image:'product-code-066.jpg'
-      };
-// product4
-const product4 = { 
+      },{ 
         id:4,
         code: '077',
         cat:'Bracelet',
@@ -88,9 +83,7 @@ const product4 = {
         price: 60, 
         dscnt_prc: 31, 
         image:'product-code-077.jpg'
-      };
-// product5
-const product5 = { 
+      },{ 
         id:5,
         code: '088',
         cat:'Bracelet',
@@ -110,9 +103,7 @@ const product5 = {
         price: 75, 
         dscnt_prc: 0, 
         image:'product-code-088.jpg'
-      };
-// product6
-const product6 = { 
+      },{ 
         id:6,
         code: '099',
         cat:'Bracelet',
@@ -132,7 +123,9 @@ const product6 = {
         price: 70, 
         dscnt_prc: 20, 
         image:'product-code-099.jpg'
-      };
+      }
+]
+
 
 /************* FUNCTIONS *************/
 // Stored functions that will run as part of this application
@@ -143,16 +136,16 @@ const product6 = {
 function getProductRating(product){
     let c = 0;
     let strs = '';
-    for(i=1;i<=product.rate;i++){
-        strs += product.rateStar.full;
-        c++;
+    for(i=1;i<=product.rate;i++){          // i=1 1<= 4.4 until i=4
+        strs += product.rateStar.full;      // strs = 4*full
+        c++;                                // c=1 until c=4
     }
-    if(c%product.rate!=0)
-    {
-        strs += product.rateStar.half;
-        c++;
+    if(c%product.rate!=0)                   // 4%4.4!=0
+    {                                        
+        strs += product.rateStar.half;      //  strs = half
+        c++;                                //  c=5
     } 
-    if(c<5)
+    if(c<5)                                 // 5<5 it doesn't go to this if
     {
         for(i=1;i<=5-c;i++){
             strs += product.rateStar.empty;
@@ -193,7 +186,7 @@ function getDiscountPrice(product){
 function getAllProductsString(product) {
 
    return `<article class="product one">
-          <div class="image"><img src="img/${product.image}" alt="Code: 044"></div>
+          <div class="image"><img src="img/${product.image}" alt="${product.code}"></div>
           <h3>Code: ${product.code}</h3>
           <div class="color"> 
               ${getColor(product.colors)}
@@ -214,12 +207,21 @@ function getAllProductsString(product) {
         </article>`;
 }
 
+function renderProducts (arrToRender) {
+    const arrOfHtmlProducts = products.map(getAllProductsString);
+    const strOfHtmlProducts = arrOfHtmlProducts.join('\n');
+    document.getElementById('all-products').innerHTML = strOfHtmlProducts;
+}
+
 
 /************* EXECUTABLE *************/
 // Execute functions that will access data
-document.getElementById('all-products').innerHTML = getAllProductsString(product1)
-document.getElementById('all-products').innerHTML += getAllProductsString(product2)
-document.getElementById('all-products').innerHTML += getAllProductsString(product3)
-document.getElementById('all-products').innerHTML += getAllProductsString(product4)
-document.getElementById('all-products').innerHTML += getAllProductsString(product5)
-document.getElementById('all-products').innerHTML += getAllProductsString(product6)
+
+// document.getElementById('all-products').innerHTML = getAllProductsString(products[0])
+// document.getElementById('all-products').innerHTML += getAllProductsString(products[1])
+// document.getElementById('all-products').innerHTML += getAllProductsString(products[2])
+// document.getElementById('all-products').innerHTML += getAllProductsString(products[3])
+// document.getElementById('all-products').innerHTML += getAllProductsString(products[4])
+// document.getElementById('all-products').innerHTML += getAllProductsString(products[5])
+
+renderProducts(products);
