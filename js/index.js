@@ -15,11 +15,7 @@ const products = [
         },
         material: 'Gold',
         rate: 4.4,
-        rateStar:{
-            full : '<i class="material-icons">star</i>',
-            half : '<i class="material-icons">star_half</i>',
-            empty: '<i class="material-icons">star_border</i>'
-        },
+        rateStar,
         price: 60, 
         dscnt_prc: 21, 
         image:'product-code-044.jpg'
@@ -35,11 +31,7 @@ const products = [
         },
         material: 'Gold',
         rate: 4.0,
-        rateStar:{
-            full : '<i class="material-icons">star</i>',
-            half : '<i class="material-icons">star_half</i>',
-            empty: '<i class="material-icons">star_border</i>'
-        },
+        rateStar,
         price: 50, 
         dscnt_prc: 0, 
         image:'product-code-055.jpg'
@@ -55,11 +47,7 @@ const products = [
         },
         material: 'Gold',
         rate: 4.0,
-        rateStar:{
-            full : '<i class="material-icons">star</i>',
-            half : '<i class="material-icons">star_half</i>',
-            empty: '<i class="material-icons">star_border</i>'
-        },
+        rateStar,
         price: 80, 
         dscnt_prc: 41, 
         image:'product-code-066.jpg'
@@ -75,11 +63,7 @@ const products = [
         },
         material: 'Gold',
         rate: 4.4,
-        rateStar:{
-            full : '<i class="material-icons">star</i>',
-            half : '<i class="material-icons">star_half</i>',
-            empty: '<i class="material-icons">star_border</i>'
-        },
+        rateStar,
         price: 60, 
         dscnt_prc: 31, 
         image:'product-code-077.jpg'
@@ -95,11 +79,7 @@ const products = [
         },
         material: 'Gold,Silver',
         rate: 4.0,
-        rateStar:{
-            full : '<i class="material-icons">star</i>',
-            half : '<i class="material-icons">star_half</i>',
-            empty: '<i class="material-icons">star_border</i>'
-        },
+        rateStar,
         price: 75, 
         dscnt_prc: 0, 
         image:'product-code-088.jpg'
@@ -115,17 +95,18 @@ const products = [
         },
         material: 'Gold',
         rate: 4.0,
-        rateStar:{
-            full : '<i class="material-icons">star</i>',
-            half : '<i class="material-icons">star_half</i>',
-            empty: '<i class="material-icons">star_border</i>'
-        },
+        rateStar,
         price: 70, 
         dscnt_prc: 20, 
         image:'product-code-099.jpg'
       }
 ]
 
+const rateStar = {
+    full : '<i class="material-icons">star</i>',
+    half : '<i class="material-icons">star_half</i>',
+    empty: '<i class="material-icons">star_border</i>'
+}
 
 /************* FUNCTIONS *************/
 // Stored functions that will run as part of this application
