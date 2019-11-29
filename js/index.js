@@ -1,6 +1,11 @@
 /************* GLOBAL VARIABLES/DATA *************/
 
 // An Object holds multiple variables (properties) together
+const rateStar = {
+    full : '<i class="material-icons">star</i>',
+    half : '<i class="material-icons">star_half</i>',
+    empty: '<i class="material-icons">star_border</i>'
+}
 
 const products = [
     { 
@@ -102,11 +107,7 @@ const products = [
       }
 ]
 
-const rateStar = {
-    full : '<i class="material-icons">star</i>',
-    half : '<i class="material-icons">star_half</i>',
-    empty: '<i class="material-icons">star_border</i>'
-}
+
 
 /************* FUNCTIONS *************/
 // Stored functions that will run as part of this application
