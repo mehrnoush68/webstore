@@ -231,7 +231,7 @@ function getDiscountPrice(product){
 // Return: String of HTML (<article>)
 function getAllProductsString(product) {
 
-   return `<article class="product one">
+   return `<article class="product">
           <div class="image"><img src="img/${product.image}" alt="${product.code}"></div>
           <h3>Code: ${product.code}</h3>
           <div class="color"> 
@@ -253,6 +253,7 @@ function getAllProductsString(product) {
         </article>`;
 }
 
+
 function renderProducts (arrToRender) {
     const arrOfHtmlProducts = arrToRender.map(getAllProductsString);
     const strOfHtmlProducts = arrOfHtmlProducts.join('\n');
@@ -261,7 +262,7 @@ function renderProducts (arrToRender) {
 function pageNumberString(pagesize) {
     var str='';
     for (var i=0; i<=(products.length/pagesize); i++) {
-        str += `<li id="page_${i+1} "class="active"><a href="#">${i+1}</a></li>  `;
+        str += `<li id="page_${i+1}" class="active"><a href="#">${i+1}</a></li>  `;
         // document.getElementById('"page_${i+1}"').addEventListener('click', renderProducts(products.splice(0, pagesize)));
     }
     return str;
