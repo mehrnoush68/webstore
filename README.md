@@ -106,13 +106,32 @@ You should now have five identically structured products with data that's writte
 ### 2. Formalize structure and map by click
 **Due: Before class, Week 14**
 
-[To be updated]
+- Structure all products Objects into an Array
+- Use a combination of the various Array functions to create one HTML Element for each complete product stored
+- Increase list of items to at least 10 (all should have the same structure, but content should be very different)
+   - Notes: If a property doesn't have/need a value for one element, give it a value of `null`
+- Add a `click` listener to an Element in the `document` that does *something* (loads products, adds a class, etc)
+- Dynamically style for various product states (limited supply, unavailable, categories, sale, clearance, etc)
+- Prepare and test for pagination
+  - Ensure the pagination component (list of clickable page numbers) is styled
+  - Experiment: print only the first 5 products (use "splice()")
 
 
 ### 3. Filter products on form submit
 **Due: Before class, Week 15**
 
-[To be updated]
+- Increase total number of unique products to 20
+- Capture form events and the relevant data
+- Filter products before display by at using at least **two** separate filter conditions
+  - For example: price range (high and low) and colour
+
+
+Other (optional) ways to go "above and beyond":
+- Sort by a product property (try numerical and string)
+- Paginate your document
+- Take direction from the user in regard to how many products to show per page
+- Make product buttons clickable (for adding to cart)
+- Create an array to hold the `id` of some products (ex, favourited or added to cart)
 
 ---
 ## Rubric

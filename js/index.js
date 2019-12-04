@@ -104,6 +104,70 @@ const products = [
         price: 70, 
         dscnt_prc: 20, 
         image:'product-code-099.jpg'
+      },{ 
+        id:7,
+        code: '100',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: null,
+            colorTwo: null,
+            colorThree: 'white'
+        },
+        material: 'Gold',
+        rate: 4.5,
+        rateStar,
+        price: 95, 
+        dscnt_prc: 0, 
+        image:'product-code-100.jpg'
+      },{ 
+        id:8,
+        code: '101',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne:'grey',
+            colorTwo: null,
+            colorThree: 'white'
+        },
+        material: 'Gold',
+        rate: 4.2,
+        rateStar,
+        price: 60, 
+        dscnt_prc: 10, 
+        image:'product-code-101.jpg'
+      },{ 
+        id:9,
+        code: '102',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne:'red',
+            colorTwo: 'black',
+            colorThree: 'white'
+        },
+        material: 'Gold',
+        rate: 5.0,
+        rateStar,
+        price: 72, 
+        dscnt_prc: 20, 
+        image:'product-code-102.jpg'
+      },{ 
+        id:10,
+        code: '103',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne:'red',
+            colorTwo: null,
+            colorThree: null
+        },
+        material: 'Gold',
+        rate: 2.9,
+        rateStar,
+        price: 125, 
+        dscnt_prc: 0, 
+        image:'product-code-103.jpg'
       }
 ]
 
@@ -190,20 +254,21 @@ function getAllProductsString(product) {
 }
 
 function renderProducts (arrToRender) {
-    const arrOfHtmlProducts = products.map(getAllProductsString);
+    const arrOfHtmlProducts = arrToRender.map(getAllProductsString);
     const strOfHtmlProducts = arrOfHtmlProducts.join('\n');
     document.getElementById('all-products').innerHTML = strOfHtmlProducts;
 }
-
+function pageNumberString(pagesize) {
+    var str='';
+    for (var i=0; i<=(products.length/pagesize); i++) {
+        str += `<li id="page_${i+1} "class="active"><a href="#">${i+1}</a></li>  `;
+        // document.getElementById('"page_${i+1}"').addEventListener('click', renderProducts(products.splice(0, pagesize)));
+    }
+    return str;
+}
 
 /************* EXECUTABLE *************/
 // Execute functions that will access data
 
-// document.getElementById('all-products').innerHTML = getAllProductsString(products[0])
-// document.getElementById('all-products').innerHTML += getAllProductsString(products[1])
-// document.getElementById('all-products').innerHTML += getAllProductsString(products[2])
-// document.getElementById('all-products').innerHTML += getAllProductsString(products[3])
-// document.getElementById('all-products').innerHTML += getAllProductsString(products[4])
-// document.getElementById('all-products').innerHTML += getAllProductsString(products[5])
-
-renderProducts(products);
+renderProducts(products.splice(5));
+document.getElementById('pageNumber').innerHTML = pageNumberString(5);

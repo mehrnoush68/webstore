@@ -101,6 +101,7 @@ h4 {
 .blue {background-color: blue;}
 .black {background-color: black;}
 .white {background-color: white;}
+.grey {background-color: rgb(70, 70, 70);}
 .product h3 {
     grid-area: code;
     padding: 0em;
