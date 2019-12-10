@@ -77,26 +77,26 @@
         <!-- Filtering product form -->
         <h2 class="filter-drowpdown">Filters</h2>
         <form>
-          <fieldset class="item color-f">
+          <fieldset class="item color-f" id="productsColors">
             <h4>Colour</h4>
             <ol class="checkbox-org">
               <li><input type="radio" name="colour" value="black" id="black"> <label for="black">Black</label></li>
               <li><input type="radio" name="colour" value="white" id="white"> <label for="white">White</label></li>
-              <li><input type="radio" name="colour" value="Brown" id="Brown"> <label for="Brown">Brown</label></li>
+              <li><input type="radio" name="colour" value="brown" id="brown"> <label for="Brown">Brown</label></li>
               <li><input type="radio" name="colour" value="red" id="red"> <label for="red">Red</label></li>
               <li><input type="radio" name="colour" value="blue" id="blue"> <label for="blue">Blue</label></li>
-              <li><input type="radio" name="colour" value="Green" id="Green"> <label for="black">Green</label></li>
+              <li><input type="radio" name="colour" value="green" id="green"> <label for="black">Green</label></li>
             </ol>
           </fieldset>
 
-          <fieldset class="item material-f">
+          <fieldset class="item material-f" id="productsMaterial">
             <h4>Material</h4>
             <ol class="checkbox-org">
-              <li><input type="radio" name="Material" value="gold" id="gold"> <label for="black">Gold</label></li>
-              <li><input type="radio" name="Material" value="silver" id="silver"> <label for="black">Silver</label></li>
+              <li><input type="radio" name="Material" value="Gold" id="gold"> <label for="black">Gold</label></li>
+              <li><input type="radio" name="Material" value="Silver" id="silver"> <label for="black">Silver</label></li>
             </ol>
           </fieldset>
-          <fieldset class="item rating-f">
+          <fieldset class="item rating-f" id="productsRating">
             <h4>Rating above</h4>
             <ol class="checkbox-org">
               <li>
@@ -133,7 +133,6 @@
           <option value="sort">Sort By</option>
           <option value="price-high">Price, highest to lowest</option>
           <option value="price-low">Price, lowest to highest</option>
-          <option value="newest">Newest releases</option>
         </select>
       </fieldset>
 
@@ -144,7 +143,7 @@
       </section>
 
       <section class="pages">
-        <h3>1-6 of 28 products found</h3>
+        <h3>1-5 of 20 products found</h3>
         <ul class="resultpages" id="pageNumber">
 
         </ul>

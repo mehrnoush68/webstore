@@ -49,6 +49,7 @@ a:hover {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 2;
 }
 .search {
     position: absolute;
@@ -76,6 +77,7 @@ a:hover {
     position: absolute;
     top: 1em;
     left: 5%;
+    
 }
 
 /********* Menu **********/

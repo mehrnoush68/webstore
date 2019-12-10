@@ -19,7 +19,7 @@ const products = [
             colorThree: 'white'
         },
         material: 'Gold',
-        rate: 4.4,
+        rate: 2.5,
         rateStar,
         price: 60, 
         dscnt_prc: 21, 
@@ -35,7 +35,7 @@ const products = [
             colorThree: 'white'
         },
         material: 'Gold',
-        rate: 4.0,
+        rate: 2.2,
         rateStar,
         price: 50, 
         dscnt_prc: 0, 
@@ -114,7 +114,7 @@ const products = [
             colorTwo: null,
             colorThree: 'white'
         },
-        material: 'Gold',
+        material: 'Silver',
         rate: 4.5,
         rateStar,
         price: 95, 
@@ -168,10 +168,168 @@ const products = [
         price: 125, 
         dscnt_prc: 0, 
         image:'product-code-103.jpg'
+      },{ 
+        id:11,
+        code: '104',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: null,
+            colorTwo: 'black',
+            colorThree: 'white'
+        },
+        material: 'Silver',
+        rate: 2.1,
+        rateStar,
+        price: 50, 
+        dscnt_prc: 10, 
+        image:'product-code-104.jpg'
+      },{ 
+        id:12,
+        code: '105',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'red',
+            colorTwo: null,
+            colorThree: 'white'
+        },
+        material: 'Gold',
+        rate: 4.1,
+        rateStar,
+        price: 80, 
+        dscnt_prc: 5, 
+        image:'product-code-105.jpg'
+      },{ 
+        id:13,
+        code: '106',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: null,
+            colorTwo: 'black',
+            colorThree: null
+        },
+        material: 'Gold',
+        rate: 3.5,
+        rateStar,
+        price: 90, 
+        dscnt_prc: 0, 
+        image:'product-code-106.jpg'
+      },{ 
+        id:14,
+        code: '107',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'red',
+            colorTwo: 'brown',
+            colorThree: 'green'
+        },
+        material: 'Gold',
+        rate: 2.5,
+        rateStar,
+        price: 60, 
+        dscnt_prc: 20, 
+        image:'product-code-107.jpg'
+      },{ 
+        id:15,
+        code: '108',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: null,
+            colorTwo: 'white',
+            colorThree: 'green'
+        },
+        material: 'Silver',
+        rate: 1,
+        rateStar,
+        price: 80, 
+        dscnt_prc: 10, 
+        image:'product-code-108.jpg'
+      },{ 
+        id:16,
+        code: '109',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'brown',
+            colorTwo: 'white',
+            colorThree: null
+        },
+        material: 'Gold,Silver',
+        rate: 3,
+        rateStar,
+        price: 50, 
+        dscnt_prc: 0, 
+        image:'product-code-109.jpg'
+      },{ 
+        id:17,
+        code: '110',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'brown',
+            colorTwo: null,
+            colorThree: null
+        },
+        material: 'Gold',
+        rate: 4,
+        rateStar,
+        price: 35, 
+        dscnt_prc: 0, 
+        image:'product-code-110.jpg'
+      },{ 
+        id:18,
+        code: '111',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'black',
+            colorTwo: null,
+            colorThree: null
+        },
+        material: 'Gold',
+        rate: 5,
+        rateStar,
+        price: 50, 
+        dscnt_prc: 0, 
+        image:'product-code-111.jpg'
+      },{ 
+        id:19,
+        code: '112',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'blue',
+            colorTwo: 'red',
+            colorThree: null
+        },
+        material: 'Gold',
+        rate: 1,
+        rateStar,
+        price: 90, 
+        dscnt_prc: 5, 
+        image:'product-code-112.jpg'
+      },{ 
+        id:20,
+        code: '113',
+        cat:'Bracelet',
+        colors:
+        {
+            colorOne: 'brown',
+            colorTwo: 'black',
+            colorThree: null
+        },
+        material: 'Gold',
+        rate: 5,
+        rateStar,
+        price: 105, 
+        dscnt_prc: 8, 
+        image:'product-code-113.jpg'
       }
 ]
-
-
 
 /************* FUNCTIONS *************/
 // Stored functions that will run as part of this application
@@ -199,6 +357,7 @@ function getProductRating(product){
     }
     return strs;
 }
+
 // Function: getColor
 // Parameters: colors:Object
 // Returns: String:strcolor
@@ -215,6 +374,7 @@ function getColor(colors) {
     }
     return strcolor;
 }
+
 // Function: getDiscountPrice
 // Parameters: product:Object
 // Returns: String:lastprice
@@ -226,10 +386,47 @@ function getDiscountPrice(product){
     return lastprice;
 } 
 
+function filterByRating(prod) {
+    // The variable "this" is filled with the 2nd filter argument
+    if (this == 'all') {
+      return true;
+    } else if (Math.floor(prod.rate)== this) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function filterByMaterial(prod) {
+    if (this == 'all') {
+        return true;
+        } else if (prod.material.toUpperCase().includes(this.trim().toUpperCase()) == this.toUpperCase().includes(this.trim().toUpperCase())) {
+        return true;
+        } else {
+        return false;
+        }
+}
+
+function filterBycolor(prod) {
+    if (this == 'all') {
+        return true;
+        } else if (prod.colors.colorOne == this || prod.colors.colorTwo == this || prod.colors.colorThree == this) {
+        return true;
+        } else {
+        return false;
+        }
+}
+
 // Function: getAllProductsString
 // Parameters: product:Object
 // Return: String of HTML (<article>)
 function getAllProductsString(product) {
+
+    if ((product.price- product.dscnt_prc) < 50) {
+        greatdeal = `<small class="callout urgent">SPECIAL PRICE</small>`;
+      } else {
+        greatdeal = ``
+      }
 
    return `<article class="product">
           <div class="image"><img src="img/${product.image}" alt="${product.code}"></div>
@@ -241,10 +438,13 @@ function getAllProductsString(product) {
             <span>${product.material}</span>
           </div>
           <div class="p-rating">        
-          ${product.rate} <span> ${getProductRating(product)} </span>
+          ${product.rate} <span> ${getProductRating(product)}  </span>
           </div>
           <div class="price">
-          <span> ${getDiscountPrice(product)} </span>
+          <span> ${getDiscountPrice(product)}  </span>
+          </div>
+          <div class="p-deal">
+          ${greatdeal}
           </div>
           <div class="favorite">
             <button type="button"><i class="material-icons">favorite</i></button>
@@ -253,23 +453,55 @@ function getAllProductsString(product) {
         </article>`;
 }
 
-
 function renderProducts (arrToRender) {
     const arrOfHtmlProducts = arrToRender.map(getAllProductsString);
     const strOfHtmlProducts = arrOfHtmlProducts.join('\n');
     document.getElementById('all-products').innerHTML = strOfHtmlProducts;
 }
+
 function pageNumberString(pagesize) {
     var str='';
     for (var i=0; i<=(products.length/pagesize); i++) {
-        str += `<li id="page_${i+1}" class="active"><a href="#">${i+1}</a></li>  `;
+        str += `<li id="page_${i+1}" class="active"><a href="#">${i+1}</a></li>  `; 
+        //I couldn't do pagination!
         // document.getElementById('"page_${i+1}"').addEventListener('click', renderProducts(products.splice(0, pagesize)));
     }
     return str;
 }
 
+function loadproductsCategory(event) {
+    const categoryImSearchingFor = event.target.value;
+    renderProducts(products.filter(filterByRating, categoryImSearchingFor));
+}
+
+function loadProductMaterial(event) {
+    const categoryImSearchingFor = event.target.value;
+    renderProducts(products.filter(filterByMaterial, categoryImSearchingFor));
+}
+
+function loadProductColor(event) {
+    const categoryImSearchingFor = event.target.value;
+    renderProducts(products.filter(filterBycolor, categoryImSearchingFor));
+}
+
+function sortProductByPrice(event) {
+    //I got this lines from this source: https://reactgo.com/sort-arrayofobjects/
+    const sortMyProductByPrice = event.target.value;
+    if (sortMyProductByPrice=='price-low'){
+        renderProducts(products.sort(function(a,b){ return ((a.price - a.dscnt_prc) - (b.price - b.dscnt_prc))}));
+    } 
+    if (sortMyProductByPrice=='price-high'){
+        renderProducts(products.sort(function(a,b){ return (b.price - b.dscnt_prc) - (a.price - a.dscnt_prc)}));
+    } 
+}
+
+renderProducts(products);
+// renderProducts(products.splice(5));
+
 /************* EXECUTABLE *************/
 // Execute functions that will access data
-
-renderProducts(products.splice(5));
-document.getElementById('pageNumber').innerHTML = pageNumberString(5);
+document.getElementById('pageNumber').innerHTML = pageNumberString(6);
+document.getElementById('productsRating').addEventListener('change', loadproductsCategory);
+document.getElementById('productsMaterial').addEventListener('change', loadProductMaterial);
+document.getElementById('productsColors').addEventListener('change', loadProductColor);
+document.getElementById('sort').addEventListener('change', sortProductByPrice);
